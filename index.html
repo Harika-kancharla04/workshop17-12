@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="parent">
+        <h1>
+            Advanced Javascript quiz
+        </h1>
+        <input type="text" placeholder="Enter your name" id="inp">
+        <button id="btn1">Random Name</button>
+        <button id="btn2">Start quiz</button>
+        <button id="btn3">View High scores</button>
+    </div>
+    <div class="ques" style="display: none;">
+        <h1>Which keyword is used to declare a constant variable in JavaScript?</h1>
+        <button>var</button>
+        <button>let</button>
+        <button>const</button>
+        <button>fixed</button>
+
+
+    </div>
+
+    <script>
+        let parent=document.getElementsByClassName("parent")
+        let ques=document.getElementsByClassName("ques")
+        let inpName = document.getElementById("inp");
+        let randomName = document.getElementById("btn1")
+        let startQuiz = document.getElementById("btn2")
+        let highScores = document.getElementById("btn3")
+        let rand;
+
+        let names = ["Hari", "John", "Alice", "Jessi", "Janu", "chaitu"]
+
+        randomName.addEventListener("click", () => {
+            rand = Math.floor(Math.random() * names.length);
+            inpName.value = names[rand];
+        })
+        const quizQuestions = [
+            {
+                question: "Which keyword is used to declare a constant variable in JavaScript?",
+                options: ["var", "let", "const", "fixed"],
+                answer: "const"
+            },
+            {
+                question: "What will be the output of: console.log(typeof []);",
+                options: ["undefined", "null", "object", "array"],
+                answer: "array"
+            },
+            {
+                question:"sdfghj?",
+                options: ["gh","ghj","ytr","htgr"],
+                answer:"gh"
+            },
+            {
+                question:"sdfghj?",
+                options: ["gh","ghj","ytr","htgr"],
+                answer:"gh"
+            },
+            {
+                question:"sdfghj?",
+                options: ["gh","ghj","ytr","htgr"],
+                answer:"gh"
+            }
+            
+        ];
+
+       
+
+        startQuiz.addEventListener("click", () => {
+            if (inpName.value == "") {
+                alert("Enter name to start quiz")
+            }
+            else{
+                parent.style.display="none"
+                ques.style.display="block"
+            }
+
+
+        })
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
